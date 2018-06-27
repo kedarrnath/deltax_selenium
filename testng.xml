@@ -8,7 +8,6 @@
     <test name="Test Suite With Empty Data">
         <classes>
             <class name="RegistrationPageTests.User_submission_without_data_Test"></class>
-
         </classes>
     </test>
     <test name="Test Suite Without Mandatory Data">
@@ -18,9 +17,19 @@
     </test>
     <test name="Test Suite Field Validations">
         <classes>
-
             <class name="RegistrationPageTests.Field_Validation_Test"></class>
+        </classes>
+    </test>
 
+    <test name="Test Suite Registration With Proper Data">
+        <classes>
+            <class name="RegistrationPageTests.RegistrationPositiveTest"></class>
+        </classes>
+    </test>
+
+    <test name="Test Suite URL Redirection Tests">
+        <classes>
+            <class name="RegistrationPageTests.RegistrationPositiveTest"></class>
         </classes>
     </test>
 </suite>

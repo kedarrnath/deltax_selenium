@@ -165,7 +165,7 @@ public class Field_Validation_Test extends SeleniumHelper {
     }
 
     @Test
-    public void testContactNoValidationWithSpecialCharacters() throws InterruptedException {
+    public void testContactNoValidationWithSpecialCharacters() {
         try {
             refreshPage();
         } catch (InterruptedException e) {
