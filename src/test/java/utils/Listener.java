@@ -33,24 +33,24 @@ public class Listener extends SeleniumHelper implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         logger.info("test failed" + iTestResult.getName());
         logger.info("inside test failure method");
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat fom = new SimpleDateFormat("dd_MM_YYY_hh_mm_ss");
-        String mehodName = iTestResult.getName();
-        if (!iTestResult.isSuccess()) {
-            File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            String path = new File(System.getProperty("user.dir")).getAbsolutePath() + "\\src\\resources\\";
-
-            File fileDes = new File(path + "/failure_Screenshots/" + mehodName + fom.format(calendar.getTime()) + ".png");
-            logger.info("path" + fileDes);
-
-            try {
-                FileUtils.copyFile(file, fileDes);
-
-                Reporter.log("<a href='" + fileDes.getAbsolutePath() + "'><img src='" + fileDes.getAbsolutePath() + "height='100' width='100'/> " + "<br />");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        Calendar calendar = Calendar.getInstance();
+//        SimpleDateFormat fom = new SimpleDateFormat("dd_MM_YYY_hh_mm_ss");
+//        String mehodName = iTestResult.getName();
+//        if (!iTestResult.isSuccess()) {
+//            File file = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+//            String path = new File(System.getProperty("user.dir")).getAbsolutePath() + "\\src\\resources\\";
+//
+//            File fileDes = new File(path + "/failure_Screenshots/" + mehodName + fom.format(calendar.getTime()) + ".png");
+//            logger.info("path" + fileDes);
+//
+//            try {
+//                FileUtils.copyFile(file, fileDes);
+//
+//                Reporter.log("<a href='" + fileDes.getAbsolutePath() + "'><img src='" + fileDes.getAbsolutePath() + "height='100' width='100'/> " + "<br />");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
     }
 

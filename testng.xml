@@ -3,7 +3,7 @@
 <suite name="Test Suite" preserve-order="true" thread-count="1">
     <listeners>
         <listener class-name="utils.Listener"></listener>
-        <listener class-name="utils.RetryListener"></listener>
+        <!--<listener class-name="utils.RetryListener"></listener>-->
     </listeners>
     <test name="Test Suite With Empty Data">
         <classes>
