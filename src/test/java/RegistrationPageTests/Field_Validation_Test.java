@@ -33,10 +33,55 @@ public class Field_Validation_Test extends SeleniumHelper {
 
     }
 
+
+    @Test
+    public void testFirstNameFieldWithNumbers() throws InterruptedException {
+        refreshPage();
+        registrationPage.fillFirstName("121221");
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/small[1]")).isDisplayed(), true);
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/small[1]")).getText(), "This value is not valid");
+
+    }
+
+    @Test
+    public void testFirstNameFieldWithSpecialCharaters() throws InterruptedException {
+        refreshPage();
+        registrationPage.fillFirstName("#@#$@@");
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/small[1]")).isDisplayed(), true);
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/small[1]")).getText(), "This value is not valid");
+
+    }
+
     @Test
     public void testLastNameFieldWithSingleLetter() throws InterruptedException {
         refreshPage();
         registrationPage.fillLastName("k");
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/small[1]")).isDisplayed(), true);
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/small[1]")).getText(), "This value is not valid");
+
+    }
+
+    @Test
+    public void testLastNameFieldWithNumber() throws InterruptedException {
+        refreshPage();
+        registrationPage.fillLastName("12122");
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/small[1]")).isDisplayed(), true);
+
+        Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/small[1]")).getText(), "This value is not valid");
+
+    }
+
+    @Test
+    public void testLastNameFieldWithSpecialCharacters() throws InterruptedException {
+        refreshPage();
+        registrationPage.fillLastName("#$#$$%");
 
         Assert.assertEquals(webDriver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/small[1]")).isDisplayed(), true);
 
